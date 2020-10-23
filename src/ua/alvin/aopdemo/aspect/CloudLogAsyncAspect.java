@@ -13,6 +13,7 @@ public class CloudLogAsyncAspect {
     @Before(" ua.alvin.aopdemo.aspect.AopExpressionPointcuts.forDaoPackageNoGetterAndSetter() ")
     public void logToCloudAsync(){
         System.out.println("\n===> CloudLogAsyncAspect");
+        System.out.println("============");
     }
 
 }

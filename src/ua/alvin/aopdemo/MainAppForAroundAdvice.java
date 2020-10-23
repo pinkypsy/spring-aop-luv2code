@@ -5,21 +5,22 @@ import ua.alvin.aopdemo.dao.AccountDAO;
 import ua.alvin.config.ConfigAop;
 
 import java.util.List;
+import java.util.logging.Logger;
 
-public class MainAppForAfterReturning {
-
+public class MainAppForAroundAdvice {
+    
     public static void main(String[] args) throws Exception {
 
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(ConfigAop.class);
 
-        System.out.println("MainAppForAfterReturning:");
+        System.out.println("MainAppForAroundAdvice:");
 
-        AccountDAO accountDAO = context.getBean("accountDAO", AccountDAO.class);
 
-        List<Account> accountList = accountDAO.findAccounts(true);
+        FortuneTrafficService fortuneTrafficService = context.getBean(FortuneTrafficService.class);
 
-        System.out.println("accountList in AfterReturningAdvice " + accountList);
+//        System.out.println(fortuneTrafficService.getTraffic());
+        System.out.println(fortuneTrafficService.getTraffic(false));
 
         context.close();
     }

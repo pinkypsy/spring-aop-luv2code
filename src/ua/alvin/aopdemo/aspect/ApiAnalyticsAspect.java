@@ -13,6 +13,7 @@ public class ApiAnalyticsAspect {
     @Before(" ua.alvin.aopdemo.aspect.AopExpressionPointcuts.forDaoPackageNoGetterAndSetter() ")
     public void performingAnalyticsAdvice(){
         System.out.println("\n===> ApiAnalyticsAspect");
+        System.out.println("============");
     }
 
 }
